@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/901f1c57d3.js" crossorigin="anonymous"></script>
+    <style>
+        body{display: flex; justify-content: center;
+            font-family: 'Bungee', cursive; background: black;
+        }
+        .main{width: 500px; height: 900px; border: 1px solid black;
+        background-image: url(./newbg.jpg);}
+        h1{text-align: center; 
+            color: rgb(255, 255, 255);
+            font-size:x-large;}
+        .puzzle, .select{display: flex; justify-content: center;}
+        .puzzle table td{border: 2px solid white; width: 60px; height: 60px;
+            border-radius: 10px; background: rgb(255, 255, 255); text-align: center;
+        color: white;}
+        .hidden{visibility: hidden;}
+        #midSec{margin-top: 40px; margin-bottom: 30px; display: flex; justify-content: center; position: relative;}
+        .selectedLetters{height: 40px; border: 3px solid #f04c8a;; border-radius: 25px;
+                        padding-left: 20px; padding-right: 20px; background: #f04c8a;
+                        color: white;
+                        visibility: hidden;
+                        position: relative;
+        }
+        .selectWheel{border: 2px solid white; height: 260px; width: 260px;
+                 background: #de7fd3bb; border-radius: 130px; position: relative;}
+        #letter1{position: absolute; font-size: 40px; color: white; 
+            top: 15px; left: 105px; text-align: center; line-height: 50px;}
+        #letter2{position: absolute; font-size: 40px; color: white; 
+            top: 80px; left: 190px; text-align: center; line-height: 50px;}
+        #letter3{position: absolute; font-size: 40px; color: white; 
+            top: 80px; left: 20px; text-align: center; line-height: 50px;}
+        #letter4{position: absolute; font-size: 40px; color: white; 
+            top: 175px; left: 60px; text-align: center; line-height: 50px;}
+        #letter5{position: absolute; font-size: 40px; color: white; 
+            top: 175px; left: 150px; text-align: center; line-height: 50px;}
+        .fa-shuffle{
+            color: white;
+            position: absolute;
+            top: 100px; left: 110px;
+            width: 50px; height: 50px;
+            border-radius: 25px;
+            text-align: center;
+            line-height: 50px;
+        }
+        .fa-lightbulb{
+            border: 2px solid white;
+            background: #de7fd3bb;
+            color: white;
+            position: absolute;
+            top:30px; left: 420px;
+            width: 40px; height: 40px;
+            border-radius: 25px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .fa-shuffle, .fa-lightbulb, #letter1, #letter2, #letter3, #letter4, #letter5:hover{
+            cursor: pointer;
+        }
+    </style>
+    <script src="./jquery.color.min.js"></script>
+    <script src="./project.js"></script>
+</head>
+<body>
+    <div class="main">
+        <h1>CTIS 255 - Project - Anastasya Duygu Kilic</h1>
+        <!--
+            adore
+            ore
+            rod
+            read
+            era
+        -->
+        
+        <div class="puzzle">
+            <form action="">
+            <table>
+                <tr>
+                    <td id="intersectRodRead">R</td>
+                    <td class="read">E</td>
+                    <td id="intersectAdoreRead">A</td>
+                    <td class="read">D</td>
+                    <td class="hidden"></td>
+                </tr>
+                <tr>
+                    <td class = "rod">O</td>
+                    <td class="hidden"></td>
+                    <td class="adore">D</td>
+                    <td class="hidden"></td>
+                    <td class="hidden"></td>
+                </tr>
+                <tr>
+                    <td class = "rod">D</td>
+                    <td class="hidden"></td>
+                    <td id="intersectAdoreOre">O</td>
+                    <td class = "ore">R</td>
+                    <td class = "ore">E</td>
+                </tr>
+                <tr>
+                    <td class="hidden"></td>
+                    <td class="hidden"></td>
+                    <td class="adore">R</td>
+                    <td class="hidden"></td>
+                    <td class="hidden"></td>
+                </tr>
+                <tr>
+                    <td class="hidden"></td>
+                    <td class="hidden"></td>
+                    <td id="intersectAdoreEra">E</td>
+                    <td class="era">R</td>
+                    <td class="era">A</td>
+                </tr>
+            </table>
+        </form>
+        </div>
+        <div id="midSec">
+            <div class="selectedLetters"></div>
+            <div><i class="fa-solid fa-lightbulb fa-xl"></i></div>
+        </div>
+        <div class="select">
+            <div class="selectWheel">
+                <div class="icon"><i class="fa-solid fa-shuffle fa-2x"></i></div>
+                <div id="letter1"></div>
+                <div id="letter2"></div>
+                <div id="letter3"></div>
+                <div id="letter4"></div>
+                <div id="letter5"></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
